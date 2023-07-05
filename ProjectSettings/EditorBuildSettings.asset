@@ -9,4 +9,5 @@ EditorBuildSettings:
     path: Assets/JapaneseSchool/Scenes/Demo.unity
     guid: a1cd650cd0dd46e4aa080252d67c344d
   m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: f2d71c64766c31b49b48efa853ad9c74, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 479057dc62777db488523b6728e466b1, type: 2}
