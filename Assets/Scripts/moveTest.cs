@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     Rigidbody rigidbody;
     Vector3 movement;
     float h, v;
+  
 
     void Start()
     {

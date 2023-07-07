@@ -8,7 +8,7 @@ public class DoorController : MonoBehaviour
     Animator _doorAnimator;
 
 
-
+    
     public bool IsOpen = false;
 
 
