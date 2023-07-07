@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class player_base : MonoBehaviour
 {
+    public string moveAxisName = "Vertical"; // 앞뒤 움직임을 위한 입력축 이름
+    public string rotateAxisName = "Horizontal"; // 좌우 회전을 위한 입력축 이름
+
+    public float move { get; private set; }
+    public float rotate { get; private set; }
+
+
+
     public enum State
     {
         Idle,
