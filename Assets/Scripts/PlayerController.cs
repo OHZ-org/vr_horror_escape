@@ -42,9 +42,9 @@ public class PlayerController : player_base
 }
 
 
-void FixedUpdate()
-{
-    movement.Set(h, 0f, v);
-    movement = movement.normalized * speed * Time.deltaTime;
-    rigidbody.MovePosition(transform.position + movement);
-}
+//void FixedUpdate()
+//{
+//    movement.Set(h, 0f, v);
+//    movement = movement.normalized * speed * Time.deltaTime;
+//    rigidbody.MovePosition(transform.position + movement);
+//}
