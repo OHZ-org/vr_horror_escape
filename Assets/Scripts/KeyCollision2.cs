@@ -5,7 +5,7 @@ using System.Diagnostics;
 using UnityEngine;
 
 // DoorLock, Key 충돌 체크
-public class KeyCollision : MonoBehaviour
+public class KeyCollision2 : MonoBehaviour
 {
     bool locked = true; // true면 잠긴 상태. false면 문 열림
 
@@ -13,23 +13,23 @@ public class KeyCollision : MonoBehaviour
     NoticeUI _notice;
 
     private GameObject collidingKey; // 충돌이 발생한 열쇠의 정보 저장. 맞는 열쇠인지 판단할 때 사용
-    
+
     void Start()
     {
         // 2. 알림창 script를 갖고 있는 객체를 찾아서 컴포넌트 연결
-        _notice = FindObjectOfType<NoticeUI>(); 
+        _notice = FindObjectOfType<NoticeUI>();
     }
 
     void Update()
     {
-        
+
     }
 
     // 열쇠와 충돌하는 동안 알림창 띄우기
     public void OnCollisionEnter(Collision collision)
     {
         // 열쇠와 충돌   // tag가 Key면 UI 띄움
-        if (collision.gameObject.tag == "Key") 
+        if (collision.gameObject.tag == "Key")
         {
             // 3. 알림창 불러오기
             _notice.SUB("Use Key?");
@@ -45,7 +45,7 @@ public class KeyCollision : MonoBehaviour
         if (collidingKey != null)
         {
             // 1반 잠금장치 == 1반 열쇠인 경우 // tag가 아니라 object name과 비교해야 함
-            if (collidingKey.name == "Key1")
+            if (collidingKey.name == "Key2")
             {
                 locked = false; // 문 잠금 해제
 
