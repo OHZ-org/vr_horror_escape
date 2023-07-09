@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
         h = Input.GetAxis("Horizontal");
         v = Input.GetAxis("Vertical");
         animator.SetFloat("v", v);
-        //PlayerTr.Translate(new Vector3(h,0,v) * moveSpeed * Time.deltaTime);
+       PlayerTr.Translate(new Vector3(h,0,v) * moveSpeed * Time.deltaTime);
         
         if(v!=0.0f)
         {
