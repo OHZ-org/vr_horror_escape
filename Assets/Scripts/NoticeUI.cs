@@ -40,20 +40,27 @@ public class NoticeUI : MonoBehaviour
         subani.SetBool("isOn", true);
         yield return _UIDelay1;
 
-        subani.SetBool("isOn", false);
-        yield return _UIDelay2;
-        subbox.SetActive(false);
+        //subani.SetBool("isOn", false);
+        //yield return _UIDelay2;
+        //subbox.SetActive(false);
     }
 
     // '예' 버튼이 눌렸을 때
     public void OnButtonYesClicked()
     {
-        //return true;
+        StartCoroutine(HideUI());
     }
 
     // '아니오' 버튼이 눌렸을 때
     public void OnButtonNoClicked()
     {
-        //return false;
+        StartCoroutine(HideUI());
+    }
+
+    IEnumerator HideUI()
+    {
+        subani.SetBool("isOn", false);
+        yield return _UIDelay2;
+        subbox.SetActive(false);
     }
 }
