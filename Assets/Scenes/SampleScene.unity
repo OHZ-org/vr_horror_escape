@@ -300,7 +300,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 740311644}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1483357543}
+        m_TargetAssemblyTypeName: ProblemUI, Assembly-CSharp
+        m_MethodName: ClosePopUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &740311644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -854,6 +866,7 @@ GameObject:
   - component: {fileID: 1483357540}
   - component: {fileID: 1483357542}
   - component: {fileID: 1483357541}
+  - component: {fileID: 1483357543}
   m_Layer: 5
   m_Name: PopUp
   m_TagString: Untagged
@@ -921,6 +934,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1483357539}
   m_CullTransparentMesh: 1
+--- !u!114 &1483357543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1483357539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc36e6905e1f728458c67584e4a1f101, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popub: {fileID: 1483357539}
+  pb_image: {fileID: 2080670654}
 --- !u!1 &1879574457
 GameObject:
   m_ObjectHideFlags: 0
@@ -935,6 +962,7 @@ GameObject:
   - component: {fileID: 1879574458}
   - component: {fileID: 1879574462}
   - component: {fileID: 1879574463}
+  - component: {fileID: 1879574464}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -1054,37 +1082,37 @@ MonoBehaviour:
   m_GameObject: {fileID: 1879574457}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52d4f654ebaa90541be33e23cded46f1, type: 3}
+  m_Script: {fileID: 11500000, guid: fe9b1cec002d7e84db567c0e48bbbf7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _controller: 0
-  _axis1D: 0
-  _remapConfig:
-    Enabled: 0
-    Curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 1
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 1
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
+  pb_sprite: {fileID: 21300000, guid: 465b335217154234e95aab7cba613ce0, type: 3}
+--- !u!54 &1879574464
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879574457}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2080670652
 GameObject:
   m_ObjectHideFlags: 0
