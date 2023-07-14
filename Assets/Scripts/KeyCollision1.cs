@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
 
-// 죄송 ㅜㅜ  Key1,2,3 써야 하는거 까먹어서 상속으로 코드 못짜고 복붙해서 잠금장치에 각각 넣었어요
-// class 이름이랑 Check() 함수 에서 Key name 만 다릅니다.
-
 // DoorLock, Key 충돌 체크
 public class KeyCollision : MonoBehaviour
 {
