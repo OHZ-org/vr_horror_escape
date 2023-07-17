@@ -11,16 +11,17 @@ public class object_base : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //showPb();
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (ovrGrabbable.isGrabbed)
-        {
-            showPb();
-        }
+        //if (ovrGrabbable.isGrabbed)
+        //{
+        //    showPb();
+        //}
+        showPb();
 
     }
 
