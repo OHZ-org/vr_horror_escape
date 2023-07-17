@@ -11,7 +11,7 @@ public class Control : MonoBehaviour
     public Transform PlayerTr;
     public Animator animator;
 
-    public float moveSpd = 5.0f;
+    public float moveSpd = 1.0f;
 
     // Start is called before the first frame update
     void Start()
