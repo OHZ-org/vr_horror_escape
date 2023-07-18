@@ -9,7 +9,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float moveSpeed = 3.0f;  // 이동 속도를 조절할 변수
+    public float moveSpeed = 0.01f;  // 이동 속도를 조절할 변수
 
     private Rigidbody rigidbody;
     private Animator animator;
@@ -37,7 +37,7 @@ public class Player : MonoBehaviour
 
         if (movement != Vector3.zero)
         {
-            transform.rotation = Quaternion.LookRotation(moveDirection);  // 이동 방향을 향하도록 플레이어의 회전을 설정
+            transform.rotation = Quaternion.LookRotation(-moveDirection);  // 이동 방향을 향하도록 플레이어의 회전을 설정
             animator.SetBool("isWalking", true);
         }
         else

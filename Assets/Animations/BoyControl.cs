@@ -32,17 +32,17 @@ public class Control : MonoBehaviour
 
         if (v != 0.0f)
         {
-            animator.SetBool("isWalking", true);
+            animator.SetBool("IsWalk", true);
         }
         
-        else if (h != 0.1f)
+        else if (h != 0.0f)
         {
             animator.SetBool("IsWalk", true);
         }
 
         else
         {
-            animator.SetBool("isWalking", false);
+            animator.SetBool("IsWalk", false);
         }
 
     }
