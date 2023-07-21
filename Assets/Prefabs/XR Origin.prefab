@@ -450,7 +450,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3270563093651380232}
   - component: {fileID: 1144014684702489920}
-  - component: {fileID: 8956836792205470620}
   - component: {fileID: 5741816332783605900}
   - component: {fileID: 3426951863024704646}
   - component: {fileID: 2228259810014202604}
@@ -475,7 +474,7 @@ Transform:
   m_Children:
   - {fileID: 4454728348512209829}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1144014684702489920
 MonoBehaviour:
@@ -494,32 +493,6 @@ MonoBehaviour:
   m_CameraFloorOffsetObject: {fileID: 4760170637949408686}
   m_RequestedTrackingOriginMode: 2
   m_CameraYOffset: 1.1176
---- !u!143 &8956836792205470620
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4205838149783101316}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Height: 2
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 2
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5741816332783605900
 MonoBehaviour:
   m_ObjectHideFlags: 0
