@@ -46,5 +46,5 @@ public class ProblemUI : MonoBehaviour
     private void setImage(Sprite sprite)
     {
         pb_image.sprite = sprite;
-    }
+    }   
 }
