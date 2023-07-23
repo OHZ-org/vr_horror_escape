@@ -4,6 +4,7 @@ using System.Globalization;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Security.Cryptography;
 
 public class NoticeUI : MonoBehaviour
 {
@@ -23,15 +24,23 @@ public class NoticeUI : MonoBehaviour
         subbox.SetActive(false);    
     }
 
+    void Update()
+    {
+        transform.LookAt(Camera.main.transform);
+    }
+
    // 서브 메세지 -> string 값을 매개 변수로 받아와서 2초간 출력
    // 사용법: _notice.SUB("문자열")
-   public void SUB(string message)
-    {
+   public void SUB(string message, Vector3 pos)
+   {
         subintext.text = message;
         subbox.SetActive(false);
         StopAllCoroutines();
         StartCoroutine(SUBDelay());
-    }
+
+        pos.z += 0.2f;
+        transform.position = pos;
+   }
 
     //반복되지 않게 하기 위해 딜레이 설정
     IEnumerator SUBDelay()

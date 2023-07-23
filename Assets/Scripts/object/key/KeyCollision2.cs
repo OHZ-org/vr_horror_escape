@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Diagnostics;
 using UnityEngine;
 
@@ -16,7 +17,7 @@ public class KeyCollision2 : MonoBehaviour
 
     AudioSource openingDoor; // 열리는 소리
     AudioSource closedDoor; // 닫혀있는 문 소리
-
+    
     void Start()
     {
         // 2. 알림창 script를 갖고 있는 객체를 찾아서 컴포넌트 연결
@@ -28,17 +29,18 @@ public class KeyCollision2 : MonoBehaviour
 
     void Update()
     {
-
+        
     }
 
     // 열쇠와 충돌하는 동안 알림창 띄우기
     public void OnCollisionEnter(Collision collision)
     {
         // 열쇠와 충돌   // tag가 Key면 UI 띄움
-        if (collision.gameObject.tag == "Key")
+        if (collision.gameObject.tag == "Key") 
         {
+            Vector3 collisionPosition = collision.contacts[0].point;
             // 3. 알림창 불러오기
-            _notice.SUB("Use Key?");
+            _notice.SUB("Use Key?", collisionPosition);
 
             collidingKey = collision.gameObject;
         }
@@ -51,7 +53,7 @@ public class KeyCollision2 : MonoBehaviour
         if (collidingKey != null)
         {
             // 1반 잠금장치 == 1반 열쇠인 경우 // tag가 아니라 object name과 비교해야 함
-            if (collidingKey.name == "Key2")
+            if (collidingKey.name == "Key1")
             {
                 locked = false; // 문 잠금 해제
 

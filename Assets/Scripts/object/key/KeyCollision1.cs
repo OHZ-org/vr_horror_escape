@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Diagnostics;
 using UnityEngine;
 
@@ -37,8 +38,9 @@ public class KeyCollision : MonoBehaviour
         // 열쇠와 충돌   // tag가 Key면 UI 띄움
         if (collision.gameObject.tag == "Key") 
         {
+            Vector3 collisionPosition = collision.contacts[0].point;
             // 3. 알림창 불러오기
-            _notice.SUB("Use Key?");
+            _notice.SUB("Use Key?", collisionPosition);
 
             collidingKey = collision.gameObject;
         }
