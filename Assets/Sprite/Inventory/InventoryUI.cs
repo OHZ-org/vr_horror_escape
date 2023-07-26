@@ -3,12 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.InputSystem;
+using UnityEngine.XR;
+using UnityEngine.XR.Interaction.Toolkit;
+
 
 
 public class InventoryUI : MonoBehaviour
 {
-    private InputAction inventoryAction;
+    public XRController controller = null;
+    private GameObject _camera;
     Inventory inven;
     public GameObject inventoryPanel;
     bool activeInventory = false;
@@ -36,21 +39,13 @@ public class InventoryUI : MonoBehaviour
 
     private void Awake()
     {
-        inventoryAction = new InputAction(binding: "<Gamepad>/buttonSouth");
+        _camera = GetComponent<XRRig>().cameraGameObject;
     }
-    private void OnEnable()
-    {
-        inventoryAction.Enable();
-    }
-
-    private void OnDisable()
-    {
-        inventoryAction.Disable();
-    }
+    
 
     private void Update()
     {
-        if (inventoryAction.triggered)
+        if (controller.inputDevice.TryGetFeatureValue(CommonUsages.secondaryButton, out bool secondary))
         {
             activeInventory = !activeInventory;
             inventoryPanel.SetActive(activeInventory);
