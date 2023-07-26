@@ -15,16 +15,22 @@ public class KeyCollision : MonoBehaviour
 
     private GameObject collidingKey; // 충돌이 발생한 열쇠의 정보 저장. 맞는 열쇠인지 판단할 때 사용
 
-    AudioSource openingDoor; // 열리는 소리
-    AudioSource closedDoor; // 닫혀있는 문 소리
+    //AudioSource openingDoor; // 열리는 소리
+    //AudioSource closedDoor; // 닫혀있는 문 소리
+
+    AudioSource[] arrayAudio;
+    
     
     void Start()
     {
         // 2. 알림창 script를 갖고 있는 객체를 찾아서 컴포넌트 연결
         _notice = FindObjectOfType<NoticeUI>();
 
-        openingDoor = gameObject.GetComponent<AudioSource>();
-        closedDoor = gameObject.GetComponent<AudioSource>();
+        //openingDoor = gameObject.GetComponent<AudioSource>();
+        //closedDoor = gameObject.GetComponent<AudioSource>();
+
+        arrayAudio = GameObject.Find("DoorLock1").GetComponents<AudioSource>();
+
     }
 
     void Update()
@@ -58,14 +64,17 @@ public class KeyCollision : MonoBehaviour
                 locked = false; // 문 잠금 해제
 
                 // 문 열리는 사운드 추가
-                openingDoor.Play();
+                //openingDoor.Play();
+                arrayAudio[0].Play();
+
             }
             else
             {
                 locked = true; // 문 잠긴 상태 유지 (없어도 될듯)
 
                 // 문 잠긴 소리 (달그락) 추가
-                closedDoor.Play();
+                //closedDoor.Play();
+                arrayAudio[1].Play();
             }
         }
     }
