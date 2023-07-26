@@ -59,7 +59,7 @@ public class KeyCollision2 : MonoBehaviour
         if (collidingKey != null)
         {
             // 1반 잠금장치 == 1반 열쇠인 경우 // tag가 아니라 object name과 비교해야 함
-            if (collidingKey.name == "Key1")
+            if (collidingKey.name == "Key2")
             {
                 locked = false; // 문 잠금 해제
 
