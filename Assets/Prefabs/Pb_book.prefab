@@ -15,9 +15,10 @@ GameObject:
   - component: {fileID: 126964545137609466}
   - component: {fileID: 4466934908099967115}
   - component: {fileID: 4554089901510396429}
+  - component: {fileID: -2237713036727731408}
   m_Layer: 0
   m_Name: Pb_book
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -169,6 +170,19 @@ MonoBehaviour:
   m_snapOrientation: 0
   m_snapOffset: {fileID: 0}
   m_grabPoints: []
+--- !u!114 &-2237713036727731408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7582019381175366572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50605aaffa226884bb3c7d6b4849e720, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 7fcd569a0ea9ea4409b0a85db243834b, type: 2}
 --- !u!1001 &5672200652779825804
 PrefabInstance:
   m_ObjectHideFlags: 0
