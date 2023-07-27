@@ -4,8 +4,16 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    #region Singleton
     public static Inventory instance;
+    public static bool inventoryActivated = false;
+
+    [SerializeField]
+    private GameObject go_InventoryBase;
+    [SerializeField]
+    private GameObject go_SlotsParent;
+
+    private Slot[] slots;
+
     private void Awake()
     {
         if (instance != null)
@@ -14,56 +22,49 @@ public class Inventory : MonoBehaviour
             return;
         }
         instance = this;
-        
+        DontDestroyOnLoad(gameObject); // 인벤토리 오브젝트를 씬이 변경되더라도 파괴되지 않도록 설정
     }
-    #endregion
 
-    public delegate void OnSlotCountChange(int val);
-    public OnSlotCountChange onSlotCountChange;
 
-    public delegate void OnChangeItem();
-    public OnChangeItem onChangeItem;
-
-    public List<Item> items = new List<Item>();
-
-    private int slotCnt;
-
-    public int SlotCnt
-    {
-        get => slotCnt;
-        set
-        {
-            slotCnt = value;
-            onSlotCountChange.Invoke(slotCnt);
-        }
-    }
     void Start()
     {
-        SlotCnt = 3;
+        slots = go_SlotsParent.GetComponentsInChildren<Slot>();
     }
 
-
-    public bool AddItem(Item _item)
+    void Update()
     {
-        if(items.Count < SlotCnt)
-        {
-            items.Add(_item);
-            if(onChangeItem!=null)
-            onChangeItem.Invoke();
-            return true;
-        }
-        return false;        
+        TryOpenInventory();
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void TryOpenInventory()
     {
-        if (collision.CompareTag("FieldItem"))
+        if(Input.GetKeyDown(KeyCode.I))
         {
-            FieldItems fieldItems = collision.GetComponent<FieldItems>();
-            if (AddItem(fieldItems.GetItem()))
-                fieldItems.DestroyItem();
-
+            inventoryActivated = !inventoryActivated;
+            if (inventoryActivated)
+                OpenInventory();
+            else
+                CloseInventory();
         }
     }
 
+    private void OpenInventory()
+    {
+        go_InventoryBase.SetActive(true);
+    }
+    private void CloseInventory()
+    {
+        go_InventoryBase.SetActive(false);
+    }
+
+    public void AcquireItem(Item1 _item)
+    {
+        for(int i = 0; i < slots.Length; i++)
+        {
+            if(slots[i].item.itemName == null)
+            {
+                slots[i].AddItem(_item);
+                return;
+            }
+        }
+    }
 }
