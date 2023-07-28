@@ -1,12 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 public class Door1 : MonoBehaviour
 {
     KeyCollision door;
     Animator anim;
-    bool isOpen = false;
 
     void Start()
     {
@@ -17,10 +18,10 @@ public class Door1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (door.IsLocked() == false && isOpen == false)
+        if (!door.IsLocked() && !anim.GetBool("Open"))
         {
             anim.SetBool("Open", true);
-            isOpen = true;
+            UnityEngine.Debug.Log("@@@@@@@Animation Play.");
         }
     }
 }
