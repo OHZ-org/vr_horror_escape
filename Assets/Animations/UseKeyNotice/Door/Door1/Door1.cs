@@ -18,7 +18,7 @@ public class Door1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!door.IsLocked() && !anim.GetBool("Open"))
+        if (!door.IsLocked())
         {
             anim.SetBool("Open", true);
             UnityEngine.Debug.Log("@@@@@@@Animation Play.");
