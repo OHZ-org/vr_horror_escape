@@ -22,6 +22,7 @@ public class Door1 : MonoBehaviour
         {
             anim.SetBool("Open", true);
             UnityEngine.Debug.Log("@@@@@@@Animation Play.");
+            UnityEngine.Debug.Log(anim.GetBool("Open"));
         }
     }
 }
