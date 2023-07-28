@@ -29,7 +29,7 @@ public class ActionController : MonoBehaviour
     }
     private void TryAction()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.X))
         {
             CheckItem();
             CanPickUp();
@@ -66,7 +66,7 @@ public class ActionController : MonoBehaviour
     {
         pickupActivated = true;
         actionText.gameObject.SetActive(true);
-        actionText.text = hitInfo.transform.GetComponent<ItemPickUp>().item.itemName + "È¹µæ" + "<color = yellow>" + "(Y)" + "</color>";
+        actionText.text = hitInfo.transform.GetComponent<ItemPickUp>().item.itemName + "È¹µæ" + "<color = yellow>" + "(X)" + "</color>";
     }
     private void InfoDisappear()
     {

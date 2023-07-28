@@ -20,13 +20,14 @@ public class InputInven : MonoBehaviour
 
         InputDevice device = controller.inputDevice;
         if (device.TryGetFeatureValue(CommonUsages.secondaryButton, out bool yButtonValue) && yButtonValue)
-            {
-                Inventory.inventoryActivated = !Inventory.inventoryActivated;
+         {
+            Debug.Log("############### Y´­¸² ######################");
+            Inventory.inventoryActivated = !Inventory.inventoryActivated;
                 if (Inventory.inventoryActivated)
                     OpenInventory();
                 else
                     CloseInventory();
-            }
+         }
     }
 
     private void OpenInventory()
