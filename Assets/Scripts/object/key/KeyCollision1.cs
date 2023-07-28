@@ -78,4 +78,9 @@ public class KeyCollision : MonoBehaviour
             }
         }
     }
+
+    public bool IsLocked()
+    {
+        return locked;
+    }
 }
