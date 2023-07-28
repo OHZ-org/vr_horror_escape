@@ -8,14 +8,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class InputInven : MonoBehaviour
 {
     public XRController controller = null;
-    private GameObject _camera;
-
-    private void Awake()
-    {
-        _camera = GetComponent<XRRig>().cameraGameObject;
-    }
-
-    // Update is called once per frame
+    
     void Update()
     {
         CommonInput();
@@ -24,9 +17,9 @@ public class InputInven : MonoBehaviour
     private void CommonInput()
     {
         // Y Button
-        if (controller.inputDevice.TryGetFeatureValue(CommonUsages.secondaryButton, out bool secondary))
-        {
-            if (secondary)
+
+        InputDevice device = controller.inputDevice;
+        if (device.TryGetFeatureValue(CommonUsages.secondaryButton, out bool yButtonValue) && yButtonValue)
             {
                 Inventory.inventoryActivated = !Inventory.inventoryActivated;
                 if (Inventory.inventoryActivated)
@@ -34,7 +27,6 @@ public class InputInven : MonoBehaviour
                 else
                     CloseInventory();
             }
-        }
     }
 
     private void OpenInventory()
