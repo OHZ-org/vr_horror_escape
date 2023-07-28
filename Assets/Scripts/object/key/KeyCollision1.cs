@@ -19,8 +19,9 @@ public class KeyCollision : MonoBehaviour
     //AudioSource closedDoor; // 닫혀있는 문 소리
 
     AudioSource[] arrayAudio;
-    
-    
+    Animator anim;
+
+
     void Start()
     {
         // 2. 알림창 script를 갖고 있는 객체를 찾아서 컴포넌트 연결
@@ -30,6 +31,7 @@ public class KeyCollision : MonoBehaviour
         //closedDoor = gameObject.GetComponent<AudioSource>();
 
         arrayAudio = GameObject.Find("DoorLock1").GetComponents<AudioSource>();
+        anim = GetComponent<Animator>();
 
     }
 
@@ -66,6 +68,7 @@ public class KeyCollision : MonoBehaviour
                 // 문 열리는 사운드 추가
                 //openingDoor.Play();
                 arrayAudio[0].Play();
+                anim.SetBool("Open", true);
 
             }
             else
