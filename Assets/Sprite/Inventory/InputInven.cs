@@ -7,6 +7,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class InputInven : MonoBehaviour
 {
+    private bool yButtonPreviouslyPressed = false;
     public XRController controller = null;
     
     void Update()
@@ -21,7 +22,8 @@ public class InputInven : MonoBehaviour
         InputDevice device = controller.inputDevice;
         if (device.TryGetFeatureValue(CommonUsages.secondaryButton, out bool yButtonValue) && yButtonValue)
          {
-            Debug.Log("############### Y눌림 ######################");
+            yButtonPreviouslyPressed = true;
+            Debug.Log("##### Y눌림 ######");
             Inventory.inventoryActivated = !Inventory.inventoryActivated;
                 if (Inventory.inventoryActivated)
                     OpenInventory();
