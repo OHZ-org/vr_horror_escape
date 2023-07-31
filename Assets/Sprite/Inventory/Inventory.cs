@@ -37,7 +37,7 @@ public class Inventory : MonoBehaviour
     }
     private void TryOpenInventory()
     {
-        if(Input.GetKeyDown(KeyCode.I))
+        if (Input.GetKeyDown(KeyCode.I))
         {
             Debug.Log("I ´­¸²");
             inventoryActivated = !inventoryActivated;
@@ -59,9 +59,9 @@ public class Inventory : MonoBehaviour
 
     public void AcquireItem(Item1 _item)
     {
-        for(int i = 0; i < slots.Length; i++)
+        for (int i = 0; i < slots.Length; i++)
         {
-            if(slots[i].item.itemName == null)
+            if (slots[i].item.itemName == null)
             {
                 slots[i].AddItem(_item);
                 return;

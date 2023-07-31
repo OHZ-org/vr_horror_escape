@@ -21,5 +21,5 @@ public class Slot : MonoBehaviour
         itemImage.sprite = item.itemImage;
         SetColor(1);
     }
-  
+
 }
