@@ -68,6 +68,7 @@ public class KeyCollision : MonoBehaviour
                 // 문 열리는 사운드 추가
                 //openingDoor.Play();
                 arrayAudio[0].Play();
+                UnityEngine.Debug.Log("소리");
 
 
             }

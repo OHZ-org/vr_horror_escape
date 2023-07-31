@@ -24,8 +24,8 @@ public class Door1 : MonoBehaviour
         if (!door.IsLocked())
         {
              anim.SetBool("Open", true);
-             //UnityEngine.Debug.Log("@@@@@@Animation Play.");
-             //UnityEngine.Debug.Log(anim.GetBool("Open"));
+             UnityEngine.Debug.Log("@@@@@@Animation Play.");
+             UnityEngine.Debug.Log(anim.GetBool("Open"));
         }
         
     }
