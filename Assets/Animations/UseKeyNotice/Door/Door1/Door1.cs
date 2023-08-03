@@ -9,12 +9,12 @@ using UnityEngine;
 public class Door1 : MonoBehaviour
 {
 
-    KeyCollision door;
+    KeyCollisionAll door;
     Animator anim;
 
     void Start()
     {
-         door = FindObjectOfType<KeyCollision>();
+         door = FindObjectOfType<KeyCollisionAll>();
          anim = GetComponent<Animator>();
     }
 

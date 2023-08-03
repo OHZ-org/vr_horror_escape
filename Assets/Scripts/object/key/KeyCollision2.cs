@@ -29,7 +29,7 @@ public class KeyCollision2 : MonoBehaviour
         //openingDoor = gameObject.GetComponent<AudioSource>();
         //closedDoor = gameObject.GetComponent<AudioSource>();
 
-        arrayAudio = GameObject.Find("DoorLock1").GetComponents<AudioSource>();
+        arrayAudio = GameObject.Find("DoorLock2").GetComponents<AudioSource>();
 
     }
 

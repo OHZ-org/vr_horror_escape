@@ -6,12 +6,12 @@ using UnityEngine.UI;
 public class ButtonYesEvent : MonoBehaviour
 {
     private NoticeUI noticeUI;
-    private KeyCollision keyCollision;
+    private KeyCollisionAll keyCollision;
 
     void Start()
     {
         // keyCollision 컴포넌트 찾아서 가져옴
-        keyCollision = FindObjectOfType<KeyCollision>();
+        keyCollision = FindObjectOfType<KeyCollisionAll>();
 
         // NoticeUI 컴포넌트를 찾아서 가져옴
         noticeUI = FindObjectOfType<NoticeUI>();
