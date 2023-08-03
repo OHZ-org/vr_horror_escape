@@ -23,7 +23,7 @@ public class Pb_ox : MonoBehaviour
 
     public void judgeAnswer()
     {
-        if (inputAnswer.text == "dd")
+        if (inputAnswer.text == "12")
         {
             Debug.Log("Á¤´ä");
             Instantiate(key, pbbook.transform);
