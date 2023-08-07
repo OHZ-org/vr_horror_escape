@@ -8,6 +8,7 @@ public class Pb_ox : MonoBehaviour
     public InputField inputAnswer;
     public GameObject key;
     public GameObject pbbook;
+    private string userInput;
 
     // Start is called before the first frame update
     void Start()
@@ -23,14 +24,16 @@ public class Pb_ox : MonoBehaviour
 
     public void judgeAnswer()
     {
-        if (inputAnswer.text == "12")
+        userInput = inputAnswer.text;
+        if (userInput == "12")
         {
-            Debug.Log("정답");
-            Instantiate(key, pbbook.transform);
+            Debug.Log("정답"+userInput);
+            Instantiate(key, new Vector3(0, 0, 0), Quaternion.identity);
         }
         else
         {
-            Debug.Log("오답");
+            Debug.Log("오답"+userInput);
+            Instantiate(key, new Vector3(0,0,0),Quaternion.identity);
         }
     }
 }
