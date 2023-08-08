@@ -1,15 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TVButton : MonoBehaviour
 {
     private bool pushed = false;
     AudioSource sound;
+    private Button btn;
 
     void Start()
     {
+        btn = GetComponent<Button>();
         sound = GetComponent<AudioSource>();
+        btn.onClick.AddListener(OnOff);
+    }
+
+    private void OnOff()
+    {
+        if (!pushed)
+        {
+            sound.Play();
+            pushed = true;
+        }
+        else
+        {
+            sound.Stop();
+            pushed = false;
+        }
     }
 
     void Update()
@@ -17,23 +35,5 @@ public class TVButton : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            // 꺼진 상태에서 충돌
-            if (!pushed)
-            {
-                pushed = true;
-                sound.Play();
-            }
-            // 켜진 상태에서 충돌
-            else
-            {
-                pushed = false;
-                sound.Stop();
-            }
-        }
-        
-    }
+    
 }

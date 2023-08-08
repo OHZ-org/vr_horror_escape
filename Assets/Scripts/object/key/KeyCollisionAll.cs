@@ -21,7 +21,6 @@ public class KeyCollisionAll : MonoBehaviour
         arrayAudio = GameObject.Find("DoorLock1").GetComponents<AudioSource>();
 
         doorName = gameObject.name; // 문(도어락)의 정보 (1,2,3)
-
     }
 
     // 열쇠와 충돌하는 동안 알림창 띄우기
@@ -85,7 +84,7 @@ public class KeyCollisionAll : MonoBehaviour
             else if (doorName == "DoorLock3")
             {
                 // 3반 잠금장치 == 3반 열쇠인 경우 // tag가 아니라 object name과 비교해야 함
-                if (collidingKey.name == "Key1")
+                if (collidingKey.name == "Key3")
                 {
                     locked = false; // 문 잠금 해제
 
@@ -99,7 +98,8 @@ public class KeyCollisionAll : MonoBehaviour
                     // 문 잠긴 소리 (달그락) 추가
                     arrayAudio[1].Play();
                 }
-            }       
+            }
+            Debug.Log(doorName + collidingKey.name);
         }
     }
 

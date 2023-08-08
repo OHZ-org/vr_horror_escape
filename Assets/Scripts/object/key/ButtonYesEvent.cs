@@ -7,6 +7,7 @@ public class ButtonYesEvent : MonoBehaviour
 {
     private NoticeUI noticeUI;
     private KeyCollisionAll keyCollision;
+    Button button;
 
     void Start()
     {
@@ -17,7 +18,7 @@ public class ButtonYesEvent : MonoBehaviour
         noticeUI = FindObjectOfType<NoticeUI>();
 
         // 버튼 클릭 이벤트에 함수 할당
-        Button button = GetComponent<Button>();
+        button = GetComponent<Button>();
         button.onClick.AddListener(OnButtonYesClicked);
     }
 
