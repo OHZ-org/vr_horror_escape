@@ -15,7 +15,7 @@ public class Pb_ox : MonoBehaviour
     private static int count1;// 1반 문제 정답수 
     private static int count2;// 2반 문제 정답수 
     private static int count3;// 미술실 문제 정답수 
-
+    
     // Start is called before the first frame update
     void Start()
     {

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class object_base : MonoBehaviour
 {
@@ -9,25 +10,25 @@ public class object_base : MonoBehaviour
     private GameObject popub;//문제 나오는 ui 창
     [SerializeField]
     private Image pb_image;
-    
-    private OVRGrabbable ovrGrabbable;
+
+    private XRGrabInteractable grabInteractable;
 
     public Sprite pb_sprite;//문제 이미지 객체
     // Start is called before the first frame update
     void Start()
     {
-        ShowPopUp();
+        grabInteractable = GetComponent<XRGrabInteractable>();
+        //ShowPopUp();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //if (ovrGrabbable.isGrabbed)
-        //{
-        //    showPb();
-        //}
-       
 
+        if (grabInteractable.isSelected)
+        {
+            ShowPopUp();
+        }
     }
 
     //잡기->isgrabbed true->팝업창 띄우기
