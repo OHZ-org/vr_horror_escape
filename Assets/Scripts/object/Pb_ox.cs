@@ -31,23 +31,10 @@ public class Pb_ox : MonoBehaviour
     public void judgeAnswer()
     {
         userInput = inputAnswer.text;
-        if (checkPB.name == "Pb_book")
-        {
-            if (userInput == "12")
-            {
-                Debug.Log("정답" + userInput);
-                OKtextChange("정답");
-                count1++;
-                if(count1 == 1 )
-                    Instantiate(key, new Vector3(0, 0, 0), Quaternion.identity);
-            }
-            else
-            {
-                Debug.Log("오답" + userInput);
-                Instantiate(key, new Vector3(0, 0, 0), Quaternion.identity);
-                OKtextChange("오답");
-            }
-        }
+        CheckPB1(userInput);
+        CheckPB2(userInput);
+        CheckPB3(userInput);
+
     }
     private void OKtextChange(string ok)
     {
@@ -57,5 +44,164 @@ public class Pb_ox : MonoBehaviour
     public void closepopup()
     {
         okPopup.SetActive(false);
+    }
+    private void CheckPB1(string input)
+    {
+        if (checkPB.name == "Pb_1_1")
+        {
+            if (input == "10")
+            {
+                Debug.Log("정답" + input);
+                OKtextChange("정답");
+                count1++;
+                if (count1 == 3)
+                    Instantiate(key, new Vector3(0, 0, 0), Quaternion.identity);
+            }
+            else
+            {
+                Debug.Log("오답" + input);
+                OKtextChange("오답");
+            }
+        }
+
+        if (checkPB.name == "Pb_1_2")
+        {
+            if (input == "8")
+            {
+                Debug.Log("정답" + input);
+                OKtextChange("정답");
+                count1++;
+                if (count1 == 3)
+                    Instantiate(key, new Vector3(0, 0, 0), Quaternion.identity);
+            }
+            else
+            {
+                Debug.Log("오답" + input);
+                OKtextChange("오답");
+            }
+        }
+        if (checkPB.name == "Pb_1_3")
+        {
+            if (input == "10")
+            {
+                Debug.Log("정답" + input);
+                OKtextChange("정답");
+                count1++;
+                if (count1 == 1)
+                    Instantiate(key, new Vector3(0, 0, 0), Quaternion.identity);
+            }
+            else
+            {
+                Debug.Log("오답" + input);
+                OKtextChange("오답");
+            }
+        }
+    }
+
+    private void CheckPB2(string input)
+    {
+        if (checkPB.name == "Pb_2_1")
+        {
+            if (input == "chair")
+            {
+                Debug.Log("정답" + input);
+                OKtextChange("정답");
+                count2++;
+                if (count2 == 4)
+                    Instantiate(key, new Vector3(0, 0, 0), Quaternion.identity);
+            }
+            else
+            {
+                Debug.Log("오답" + input);
+                OKtextChange("오답");
+            }
+        }
+
+        if (checkPB.name == "Pb_2_2")
+        {
+            if (input == "72")
+            {
+                Debug.Log("정답" + input);
+                OKtextChange("정답");
+                count2++;
+                if (count2 == 4)
+                    Instantiate(key, new Vector3(0, 0, 0), Quaternion.identity);
+            }
+            else
+            {
+                Debug.Log("오답" + input);
+                OKtextChange("오답");
+            }
+        }
+
+        if (checkPB.name == "Pb_2_3")
+        {
+            if (input == "1341")
+            {
+                Debug.Log("정답" + input);
+                OKtextChange("정답");
+                count2++;
+                if (count2 == 4)
+                    Instantiate(key, new Vector3(0, 0, 0), Quaternion.identity);
+            }
+            else
+            {
+                Debug.Log("오답" + input);
+                OKtextChange("오답");
+            }
+        }
+
+        if (checkPB.name == "Pb_2_4")
+        {
+            if (input == "long time no see")
+            {
+                Debug.Log("정답" + input);
+                OKtextChange("정답");
+                count2++;
+                if (count2 == 4)
+                    Instantiate(key, new Vector3(0, 0, 0), Quaternion.identity);
+            }
+            else
+            {
+                Debug.Log("오답" + input);
+                OKtextChange("오답");
+            }
+        }
+    }
+
+    private void CheckPB3(string input)
+    {
+        if (checkPB.name == "Pb_3_1")
+        {
+            if (input == "954125")
+            {
+                Debug.Log("정답" + input);
+                OKtextChange("정답");
+                count3++;
+                if (count3 == 2)
+                    Instantiate(key, new Vector3(0, 0, 0), Quaternion.identity);
+            }
+            else
+            {
+                Debug.Log("오답" + input);
+                OKtextChange("오답");
+            }
+        }
+        if (checkPB.name == "Pb_3_2")
+        {
+            if (input == "매듭")
+            {
+                Debug.Log("정답" + input);
+                OKtextChange("정답");
+                count3++;
+                if (count3 == 2)
+                    Instantiate(key, new Vector3(0, 0, 0), Quaternion.identity);
+            }
+            else
+            {
+                Debug.Log("오답" + input);
+                OKtextChange("오답");
+            }
+        }
     }
 }
