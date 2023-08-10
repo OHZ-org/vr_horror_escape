@@ -39,18 +39,18 @@ public class KeyCollision3 : MonoBehaviour
     }
 
     // 열쇠와 충돌하는 동안 알림창 띄우기
-    public void OnCollisionEnter(Collision collision)
-    {
-        // 열쇠와 충돌   // tag가 Key면 UI 띄움
-        if (collision.gameObject.tag == "Key") 
-        {
-            Vector3 collisionPosition = collision.contacts[0].point;
-            // 3. 알림창 불러오기
-            _notice.SUB("Use Key?", collisionPosition);
+    //public void OnCollisionEnter(Collision collision)
+    //{
+    //    // 열쇠와 충돌   // tag가 Key면 UI 띄움
+    //    if (collision.gameObject.tag == "Key") 
+    //    {
+    //        Vector3 collisionPosition = collision.contacts[0].point;
+    //        // 3. 알림창 불러오기
+    //        _notice.SUB("Use Key?", collisionPosition);
 
-            collidingKey = collision.gameObject;
-        }
-    }
+    //        collidingKey = collision.gameObject;
+    //    }
+    //}
 
     // UI에서 '열쇠 사용' 버튼을 눌렀을 때 호출할 함수
     // 열쇠 사용 버튼을 눌렀을 때 맞는 열쇠인지 체크

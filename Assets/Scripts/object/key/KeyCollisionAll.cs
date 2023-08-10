@@ -99,7 +99,7 @@ public class KeyCollisionAll : MonoBehaviour
                     arrayAudio[1].Play();
                 }
             }
-            Debug.Log(doorName + collidingKey.name);
+            Debug.Log(doorName + collidingKey.name + locked);
         }
     }
 
