@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ButtonYesEvent : MonoBehaviour
 {
     private NoticeUI noticeUI;
-    private KeyCollisionAll keyCollision;
+    KeyCollisionAll keyCollision;
     Button button;
 
     void Start()
@@ -25,6 +25,7 @@ public class ButtonYesEvent : MonoBehaviour
     // '예' 버튼 눌리면
     public void OnButtonYesClicked()
     {
+        Debug.Log("OkButton Clicked");
         keyCollision.Check(); // 맞는 열쇠인지 체크하는 함수 호출
         noticeUI.OnButtonYesClicked(); // UI 닫음
     }

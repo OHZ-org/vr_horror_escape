@@ -42,6 +42,8 @@ public class KeyCollisionAll : MonoBehaviour
     // 열쇠 사용 버튼을 눌렀을 때 맞는 열쇠인지 체크
     public void Check()
     {
+        Debug.Log("Check() 호출");
+
         if (collidingKey != null)
         {
             if (doorName == "DoorLock1")
