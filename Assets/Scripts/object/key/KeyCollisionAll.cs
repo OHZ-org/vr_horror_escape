@@ -12,7 +12,8 @@ public class KeyCollisionAll : MonoBehaviour
     private GameObject collidingKey; // 충돌이 발생한 열쇠의 정보 저장. 맞는 열쇠인지 판단할 때 사용
     AudioSource[] arrayAudio; // [0]: 문 열리는 소리, [1]: 잠긴 소리
 
-    string doorName; // 문 정보(이름)
+    public string doorName; // 문 정보(이름)
+
 
     void Start()
     {
