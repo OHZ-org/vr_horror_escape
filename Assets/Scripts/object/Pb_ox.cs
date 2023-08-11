@@ -82,7 +82,7 @@ public class Pb_ox : MonoBehaviour
         }
         if (checkPB.name == "Pb_1_3")
         {
-            if (input == "10")
+            if (input == "출구")
             {
                 Debug.Log("정답" + input);
                 OKtextChange("정답");
