@@ -19,14 +19,14 @@ public class ButtonYesEvent : MonoBehaviour
 
         // 버튼 클릭 이벤트에 함수 할당
         button = GetComponent<Button>();
-        button.onClick.AddListener(OnButtonYesClicked);
+        button.onClick.AddListener(ButtonYesClicked);
     }
 
     // '예' 버튼 눌리면
-    public void OnButtonYesClicked()
+    public void ButtonYesClicked()
     {
         Debug.Log("OkButton Clicked");
-        keyCollision.Check(); // 맞는 열쇠인지 체크하는 함수 호출
+        keyCollision.Check("keyName zz tested String"); // 맞는 열쇠인지 체크하는 함수 호출
         noticeUI.OnButtonYesClicked(); // UI 닫음
     }
 

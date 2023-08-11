@@ -9,10 +9,11 @@ public class KeyCollisionAll : MonoBehaviour
     // 1. 알림창 컴포넌트 선언
     NoticeUI _notice;
 
-    private GameObject collidingKey; // 충돌이 발생한 열쇠의 정보 저장. 맞는 열쇠인지 판단할 때 사용
+    GameObject collidingKey; // 충돌이 발생한 열쇠의 정보 저장. 맞는 열쇠인지 판단할 때 사용
     AudioSource[] arrayAudio; // [0]: 문 열리는 소리, [1]: 잠긴 소리
 
     public string doorName; // 문 정보(이름)
+    string keyNumber;
 
 
     void Start()
@@ -31,25 +32,28 @@ public class KeyCollisionAll : MonoBehaviour
         if (collision.gameObject.tag == "Key")
         {
             Vector3 collisionPosition = collision.contacts[0].point;
-            // 3. 알림창 불러오기
-            _notice.SUB("Use Key?", collisionPosition);
-
+            
             collidingKey = collision.gameObject;
+            keyNumber = collidingKey.name;
+
+            // 3. 알림창 불러오기
+            _notice.SUB("Use Key?", collisionPosition, keyNumber);
         }
     }
 
     // UI에서 '열쇠 사용' 버튼을 눌렀을 때 호출할 함수
     // 열쇠 사용 버튼을 눌렀을 때 맞는 열쇠인지 체크
-    public void Check()
+    public void Check(string keyName)
     {
         Debug.Log("Check() 호출");
+        Debug.Log(keyName); // 이거 안 뜨면 Sub() 호출할 때 key.name 같이 줘야할듯
 
-        if (collidingKey != null)
-        {
+        
             if (doorName == "DoorLock1")
             {
+                Debug.Log("DoorLock1");
                 // 1반 잠금장치 == 1반 열쇠인 경우 // tag가 아니라 object name과 비교해야 함
-                if (collidingKey.name == "Key1")
+                if (keyName == "Key1")
                 {
                     locked = false; // 문 잠금 해제
 
@@ -67,8 +71,10 @@ public class KeyCollisionAll : MonoBehaviour
 
             else if (doorName == "DoorLock2")
             {
+                Debug.Log("DoorLock2");
+
                 // 2반 잠금장치 == 2반 열쇠인 경우 // tag가 아니라 object name과 비교해야 함
-                if (collidingKey.name == "Key2")
+                if (keyName == "Key2")
                 {
                     locked = false; // 문 잠금 해제
 
@@ -86,8 +92,10 @@ public class KeyCollisionAll : MonoBehaviour
 
             else if (doorName == "DoorLock3")
             {
+                Debug.Log("DoorLock3");
+
                 // 3반 잠금장치 == 3반 열쇠인 경우 // tag가 아니라 object name과 비교해야 함
-                if (collidingKey.name == "Key3")
+                if (keyName == "Key3")
                 {
                     locked = false; // 문 잠금 해제
 
@@ -102,8 +110,8 @@ public class KeyCollisionAll : MonoBehaviour
                     arrayAudio[1].Play();
                 }
             }
-            Debug.Log(doorName + collidingKey.name + locked);
-        }
+            Debug.Log(doorName + keyName + locked);
+        
     }
 
     public bool IsLocked()

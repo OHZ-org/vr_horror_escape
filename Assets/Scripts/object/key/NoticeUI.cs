@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Security.Cryptography;
+using System.Reflection;
 
 public class NoticeUI : MonoBehaviour
 {
@@ -18,10 +19,15 @@ public class NoticeUI : MonoBehaviour
 
     public Button buttonYes;
     public Button buttonNo;
+    KeyCollisionAll keyCollision;
+
+    string keyName;
 
     void Start()
     {
-        subbox.SetActive(false);    
+        subbox.SetActive(false);
+        buttonYes.GetComponentInChildren<Button>();
+        keyCollision = FindObjectOfType<KeyCollisionAll>();
     }
 
     void Update()
@@ -31,8 +37,10 @@ public class NoticeUI : MonoBehaviour
 
    // 서브 메세지 -> string 값을 매개 변수로 받아와서 2초간 출력
    // 사용법: _notice.SUB("문자열")
-   public void SUB(string message, Vector3 pos)
+   public void SUB(string message, Vector3 pos, string keyName)
    {
+        this.keyName = keyName;
+
         subintext.text = message;
         subbox.SetActive(false);
         StopAllCoroutines();
@@ -57,6 +65,9 @@ public class NoticeUI : MonoBehaviour
     // '예' 버튼이 눌렸을 때
     public void OnButtonYesClicked()
     {
+        Debug.Log("OkButton Clicked");
+        Debug.Log(keyName);
+        keyCollision.Check(keyName); // 맞는 열쇠인지 체크하는 함수 호출
         StartCoroutine(HideUI());
     }
 
