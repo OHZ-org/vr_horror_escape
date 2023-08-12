@@ -22,7 +22,24 @@ public class KeyCollisionAll : MonoBehaviour
         _notice = FindObjectOfType<NoticeUI>();
         arrayAudio = GameObject.Find("DoorLock1").GetComponents<AudioSource>();
 
-        doorName = gameObject.name; // 문(도어락)의 정보 (1,2,3)
+        //doorName = gameObject.name; // 문(도어락)의 정보 (1,2,3)
+
+        // string doorName을 private으로 바꾸고
+        //if (gameObject.name == "DoorLock1")
+        //{
+        //    doorName = "DoorLock1";
+        //}
+        //else if (gameObject.name == "DoorLock2")
+        //{
+        //    doorName = "DoorLock2";
+        //}
+        //else if (gameObject.name == "DoorLock3")
+        //{
+        //    doorName = "DoorLock3";
+        //} 이렇게 하면 될까...?
+
+        Debug.Log(doorName);
+
     }
 
     // 열쇠와 충돌하는 동안 알림창 띄우기
