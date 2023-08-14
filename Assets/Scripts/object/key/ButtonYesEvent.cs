@@ -11,7 +11,7 @@ public class ButtonYesEvent : MonoBehaviour
 
     public int btnNum;
 
-    void Start()
+    /*void Start()
     {
         // keyCollision ÄÄÆ÷³ÍÆ® Ã£¾Æ¼­ °¡Á®¿È
         keyCollision = FindObjectOfType<KeyCollisionAll>();
@@ -37,5 +37,5 @@ public class ButtonYesEvent : MonoBehaviour
     void Update()
     {
         
-    }
+    }*/
 }

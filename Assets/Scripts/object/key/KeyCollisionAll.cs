@@ -15,6 +15,19 @@ public class KeyCollisionAll : MonoBehaviour
     public string doorName; // 문 정보(이름)
     string keyNumber;
 
+    public GameObject doorAnchor1;
+    public GameObject doorAnchor2;
+    public GameObject doorAnchor3;
+    public GameObject door1;
+    public GameObject door2;
+    public GameObject door3;
+    Animator door1Anim;
+    Animator door2Anim;
+    Animator door3Anim;
+    Animator anchor1Anim;
+    Animator anchor2Anim;
+    Animator anchor3Anim;
+    
 
     void Start()
     {
@@ -40,6 +53,13 @@ public class KeyCollisionAll : MonoBehaviour
 
         Debug.Log(doorName);
 
+        door1Anim = GetComponent<Animator>();
+        door2Anim = GetComponent<Animator>();
+        door3Anim = GetComponent<Animator>();
+        anchor1Anim = GetComponent<Animator>();
+        anchor2Anim = GetComponent<Animator>();
+        anchor3Anim = GetComponent<Animator>();
+
     }
 
     // 열쇠와 충돌하는 동안 알림창 띄우기
@@ -60,9 +80,55 @@ public class KeyCollisionAll : MonoBehaviour
 
     // UI에서 '열쇠 사용' 버튼을 눌렀을 때 호출할 함수
     // 열쇠 사용 버튼을 눌렀을 때 맞는 열쇠인지 체크
-    public void Check(int UINum)
+    public void Check(int UINum, string keyName)
     {
-        Debug.Log("Check() 호출");
+        if (UINum == 1)
+        {
+            if (keyName == "Key1")
+            {
+                door1Anim.SetBool("Open", true);
+                anchor1Anim.SetBool("Open", true);
+                arrayAudio[0].Play();
+
+            }
+            else
+            {
+                arrayAudio[1].Play();
+
+            }
+        }
+
+        else if (UINum == 2)
+        {
+            if (keyName == "Key2")
+            {
+                door2Anim.SetBool("Open", true);
+                anchor2Anim.SetBool("Open", true);
+                arrayAudio[0].Play();
+            }
+            else
+            {
+                arrayAudio[1].Play();
+            }
+        }
+
+        else if (UINum == 3)
+        {
+            if (keyName == "Key3")
+            {
+                door2Anim.SetBool("Open", true);
+                anchor2Anim.SetBool("Open", true);
+                arrayAudio[0].Play();
+
+            }
+            else
+            {
+                arrayAudio[1].Play();
+
+            }
+        }
+
+        /*Debug.Log("Check() 호출");
 
         
             if (UINum == 1)
@@ -126,7 +192,7 @@ public class KeyCollisionAll : MonoBehaviour
                     arrayAudio[1].Play();
                 }
             }
-            Debug.Log("Door:" + doorName + "Key:" + keyNumber + locked);
+            Debug.Log("Door:" + doorName + "Key:" + keyNumber + locked);*/
         
     }
 

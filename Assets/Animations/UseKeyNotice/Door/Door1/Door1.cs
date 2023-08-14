@@ -12,6 +12,13 @@ public class Door1 : MonoBehaviour
     KeyCollisionAll door;
     Animator anim;
 
+    private bool isLock = true;
+
+    void SetBool(bool x)
+    {
+        isLock = x;
+    }
+
     void Start()
     {
          door = FindObjectOfType<KeyCollisionAll>();
@@ -21,7 +28,7 @@ public class Door1 : MonoBehaviour
     void Update()
     {
         
-        if (!door.IsLocked())
+        if (!isLock)
         {
              anim.SetBool("Open", true);
              UnityEngine.Debug.Log("@@@@@@Animation Play.");
