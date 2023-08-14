@@ -70,7 +70,7 @@ public class KeyCollisionAll : MonoBehaviour
             {
                 Debug.Log("DoorLock1");
                 // 1반 잠금장치 == 1반 열쇠인 경우 // tag가 아니라 object name과 비교해야 함
-                if (keyName == "Key1")
+                if (keyNumber == "Key1")
                 {
                     locked = false; // 문 잠금 해제
 
@@ -91,7 +91,7 @@ public class KeyCollisionAll : MonoBehaviour
                 Debug.Log("DoorLock2");
 
                 // 2반 잠금장치 == 2반 열쇠인 경우 // tag가 아니라 object name과 비교해야 함
-                if (keyName == "Key2")
+                if (keyNumber == "Key2")
                 {
                     locked = false; // 문 잠금 해제
 
@@ -112,7 +112,7 @@ public class KeyCollisionAll : MonoBehaviour
                 Debug.Log("DoorLock3");
 
                 // 3반 잠금장치 == 3반 열쇠인 경우 // tag가 아니라 object name과 비교해야 함
-                if (keyName == "Key3")
+                if (keyNumber == "Key3")
                 {
                     locked = false; // 문 잠금 해제
 
@@ -127,7 +127,7 @@ public class KeyCollisionAll : MonoBehaviour
                     arrayAudio[1].Play();
                 }
             }
-            Debug.Log(doorName + keyName + locked);
+            Debug.Log(doorName + keyNumber + locked);
         
     }
 

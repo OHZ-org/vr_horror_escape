@@ -28,6 +28,7 @@ public class object_base : MonoBehaviour
         if (grabInteractable.isSelected)
         {
             ShowPopUp();
+            Debug.Log("¿‚»˚");
         }
     }
 
