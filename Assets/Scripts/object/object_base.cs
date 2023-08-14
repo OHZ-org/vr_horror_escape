@@ -18,6 +18,7 @@ public class object_base : MonoBehaviour
     void Start()
     {
         grabInteractable = GetComponent<XRGrabInteractable>();
+        ClosePopUp();
         //ShowPopUp();
     }
 

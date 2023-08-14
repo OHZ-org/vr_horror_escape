@@ -19,7 +19,7 @@ public class Pb_ox : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        closepopup();
     }
 
     // Update is called once per frame
