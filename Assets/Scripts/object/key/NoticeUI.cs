@@ -67,8 +67,8 @@ public class NoticeUI : MonoBehaviour
     // '예' 버튼이 눌렸을 때
     public void OnButtonYesClicked()
     {
-        Debug.Log("OkButton Clicked");
-        Debug.Log(keyName);
+        //Debug.Log("OkButton Clicked");
+        //Debug.Log(keyName);
         //keyCollision.Check(UINumber); // 맞는 열쇠인지 체크하는 함수 호출
         StartCoroutine(HideUI());
     }
