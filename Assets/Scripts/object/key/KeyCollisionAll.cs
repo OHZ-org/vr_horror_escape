@@ -81,7 +81,7 @@ public class KeyCollisionAll : MonoBehaviour
             keyNumber = collidingKey.name;
 
             // 3. 알림창 불러오기
-            _notice.SUB("Use Key?", collisionPosition, keyNumber, this.name);
+            //_notice.SUB("Use Key?", collisionPosition, keyNumber, this.name);
         }
     }
 
