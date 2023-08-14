@@ -20,14 +20,15 @@ public class CollisionWithKey1 : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        GameObject key = collision.gameObject;
         keyNum = collision.gameObject.name;
         if (collision.gameObject.tag == "Key")
         {
-            Check(doorNum, keyNum);
+            Check(doorNum, keyNum, key);
         }
     }
 
-    void Check(int doorNum, string keyNum)
+    void Check(int doorNum, string keyNum, GameObject key)
     {
         if (doorNum == 1)
         {
@@ -35,6 +36,7 @@ public class CollisionWithKey1 : MonoBehaviour
             {
                 arrayAudio[0].Play();
                 locked = false;
+                Destroy(key);
             }
             else
             {
@@ -48,6 +50,7 @@ public class CollisionWithKey1 : MonoBehaviour
             {
                 arrayAudio[0].Play();
                 locked = false;
+                Destroy(key);
 
             }
             else
@@ -63,6 +66,7 @@ public class CollisionWithKey1 : MonoBehaviour
             {
                 arrayAudio[0].Play();
                 locked = false;
+                Destroy(key);
 
             }
             else
