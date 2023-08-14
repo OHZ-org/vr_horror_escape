@@ -6,7 +6,7 @@ using System.Diagnostics;
 using System.Security.Cryptography;
 using UnityEngine;
 
-public class Door1 : MonoBehaviour
+public class Door3 : MonoBehaviour
 {
 
     KeyCollisionAll door;
@@ -21,19 +21,19 @@ public class Door1 : MonoBehaviour
 
     void Start()
     {
-         door = FindObjectOfType<KeyCollisionAll>();
-         anim = GetComponent<Animator>();
+        door = FindObjectOfType<KeyCollisionAll>();
+        anim = GetComponent<Animator>();
     }
 
     void Update()
     {
-        
+
         if (!isLock)
         {
-             anim.SetBool("Open", true);
-             UnityEngine.Debug.Log("@@@@@@Animation Play.");
-             UnityEngine.Debug.Log(anim.GetBool("Open"));
+            anim.SetBool("Open", true);
+            UnityEngine.Debug.Log("@@@@@@Animation Play.");
+            UnityEngine.Debug.Log(anim.GetBool("Open"));
         }
-        
+
     }
 }

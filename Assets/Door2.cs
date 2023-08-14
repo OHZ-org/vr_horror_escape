@@ -6,7 +6,7 @@ using System.Diagnostics;
 using System.Security.Cryptography;
 using UnityEngine;
 
-public class Door1 : MonoBehaviour
+public class Door2 : MonoBehaviour
 {
 
     KeyCollisionAll door;

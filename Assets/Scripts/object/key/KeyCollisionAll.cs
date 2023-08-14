@@ -8,6 +8,9 @@ public class KeyCollisionAll : MonoBehaviour
 
     // 1. 알림창 컴포넌트 선언
     NoticeUI _notice;
+    Door1 door1Sc;
+    Door2 door2Sc;
+    Door3 door3Sc;
 
     GameObject collidingKey; // 충돌이 발생한 열쇠의 정보 저장. 맞는 열쇠인지 판단할 때 사용
     AudioSource[] arrayAudio; // [0]: 문 열리는 소리, [1]: 잠긴 소리
@@ -34,6 +37,10 @@ public class KeyCollisionAll : MonoBehaviour
         // 2. 알림창 script를 갖고 있는 객체를 찾아서 컴포넌트 연결
         _notice = FindObjectOfType<NoticeUI>();
         arrayAudio = GameObject.Find("DoorLock1").GetComponents<AudioSource>();
+        
+        door1Sc = GetComponentInParent<Door1>();
+        door2Sc = GetComponentInParent<Door2>();
+        door3Sc = GetComponentInParent<Door3>();
 
         //doorName = gameObject.name; // 문(도어락)의 정보 (1,2,3)
 
@@ -86,8 +93,7 @@ public class KeyCollisionAll : MonoBehaviour
         {
             if (keyName == "Key1")
             {
-                door1Anim.SetBool("Open", true);
-                anchor1Anim.SetBool("Open", true);
+                door1Sc.SetBool(true);
                 arrayAudio[0].Play();
 
             }
@@ -102,8 +108,7 @@ public class KeyCollisionAll : MonoBehaviour
         {
             if (keyName == "Key2")
             {
-                door2Anim.SetBool("Open", true);
-                anchor2Anim.SetBool("Open", true);
+                door2Sc.SetBool(true);
                 arrayAudio[0].Play();
             }
             else
@@ -116,8 +121,7 @@ public class KeyCollisionAll : MonoBehaviour
         {
             if (keyName == "Key3")
             {
-                door2Anim.SetBool("Open", true);
-                anchor2Anim.SetBool("Open", true);
+                door3Sc.SetBool(true);
                 arrayAudio[0].Play();
 
             }
