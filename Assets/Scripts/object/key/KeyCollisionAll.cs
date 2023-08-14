@@ -60,13 +60,12 @@ public class KeyCollisionAll : MonoBehaviour
 
     // UI에서 '열쇠 사용' 버튼을 눌렀을 때 호출할 함수
     // 열쇠 사용 버튼을 눌렀을 때 맞는 열쇠인지 체크
-    public void Check(string keyName)
+    public void Check(int UINum)
     {
         Debug.Log("Check() 호출");
-        Debug.Log(keyName); // 이거 안 뜨면 Sub() 호출할 때 key.name 같이 줘야할듯
 
         
-            if (doorName == "DoorLock1")
+            if (UINum == 1)
             {
                 Debug.Log("DoorLock1");
                 // 1반 잠금장치 == 1반 열쇠인 경우 // tag가 아니라 object name과 비교해야 함
@@ -86,7 +85,7 @@ public class KeyCollisionAll : MonoBehaviour
                 }
             }
 
-            else if (doorName == "DoorLock2")
+            else if (UINum == 2)
             {
                 Debug.Log("DoorLock2");
 
@@ -107,7 +106,7 @@ public class KeyCollisionAll : MonoBehaviour
                 }
             }
 
-            else if (doorName == "DoorLock3")
+            else if (UINum == 3)
             {
                 Debug.Log("DoorLock3");
 

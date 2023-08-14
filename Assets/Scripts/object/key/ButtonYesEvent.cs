@@ -9,6 +9,8 @@ public class ButtonYesEvent : MonoBehaviour
     KeyCollisionAll keyCollision;
     Button button;
 
+    public int btnNum;
+
     void Start()
     {
         // keyCollision 컴포넌트 찾아서 가져옴
@@ -26,7 +28,9 @@ public class ButtonYesEvent : MonoBehaviour
     public void ButtonYesClicked()
     {
         Debug.Log("OkButton Clicked");
-        keyCollision.Check("keyName zz tested String"); // 맞는 열쇠인지 체크하는 함수 호출
+
+        // 이게 몇 번째 문의 Check 함수인지 판단이 안돼서 그런듯...
+        keyCollision.Check(btnNum); // 맞는 열쇠인지 체크하는 함수 호출
         noticeUI.OnButtonYesClicked(); // UI 닫음
     }
 
