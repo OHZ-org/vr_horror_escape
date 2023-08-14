@@ -24,6 +24,7 @@ public class NoticeUI : MonoBehaviour
     KeyCollisionAll keyCollision;
 
     string keyName;
+    string doorName;
 
     void Start()
     {
@@ -41,9 +42,10 @@ public class NoticeUI : MonoBehaviour
 
    // 서브 메세지 -> string 값을 매개 변수로 받아와서 2초간 출력
    // 사용법: _notice.SUB("문자열")
-   public void SUB(string message, Vector3 pos, string keyName)
+   public void SUB(string message, Vector3 pos, string keyName, string doorName)
    {
         this.keyName = keyName;
+        this.doorName = doorName;
 
         subintext.text = message;
         subbox.SetActive(false);
@@ -52,6 +54,10 @@ public class NoticeUI : MonoBehaviour
 
         pos.z += 0.2f;
         transform.position = pos;
+
+        Debug.Log("Sub: " + doorName +" " + keyName);
+
+        
    }
 
     //반복되지 않게 하기 위해 딜레이 설정
@@ -71,7 +77,7 @@ public class NoticeUI : MonoBehaviour
     {
         //Debug.Log("OkButton Clicked");
         //Debug.Log(keyName);
-        keyCollision.Check(UINumber, keyName); // 맞는 열쇠인지 체크하는 함수 호출
+        keyCollision.Check(doorName, keyName); // 맞는 열쇠인지 체크하는 함수 호출
         StartCoroutine(HideUI());
     }
 
