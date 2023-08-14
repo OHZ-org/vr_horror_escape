@@ -69,7 +69,7 @@ public class NoticeUI : MonoBehaviour
     {
         Debug.Log("OkButton Clicked");
         Debug.Log(keyName);
-        keyCollision.Check(UINumber); // 맞는 열쇠인지 체크하는 함수 호출
+        //keyCollision.Check(UINumber); // 맞는 열쇠인지 체크하는 함수 호출
         StartCoroutine(HideUI());
     }
 
