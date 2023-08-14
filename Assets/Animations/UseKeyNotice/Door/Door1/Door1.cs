@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
 using UnityEngine;
 
@@ -13,6 +14,7 @@ public class Door1 : MonoBehaviour
     Animator anim;
 
     private bool isLock = true;
+    private bool opened = false;
 
     public void SetBool(bool x)
     {
@@ -28,8 +30,9 @@ public class Door1 : MonoBehaviour
     void Update()
     {
         
-        if (!door.Locked())
+        if (!door.Locked() && !opened)
         {
+            opened = true;
              anim.SetBool("Open", true);
              UnityEngine.Debug.Log("@@@@@@Animation Play.");
              UnityEngine.Debug.Log(anim.GetBool("Open"));
