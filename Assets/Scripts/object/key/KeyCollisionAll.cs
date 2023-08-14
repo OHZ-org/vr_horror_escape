@@ -126,7 +126,7 @@ public class KeyCollisionAll : MonoBehaviour
                     arrayAudio[1].Play();
                 }
             }
-            Debug.Log(doorName + keyNumber + locked);
+            Debug.Log("Door:" + doorName + "Key:" + keyNumber + locked);
         
     }
 
