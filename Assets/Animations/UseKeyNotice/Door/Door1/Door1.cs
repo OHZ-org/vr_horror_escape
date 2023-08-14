@@ -9,7 +9,7 @@ using UnityEngine;
 public class Door1 : MonoBehaviour
 {
 
-    KeyCollisionAll door;
+    CollisionWithKey1 door;
     Animator anim;
 
     private bool isLock = true;
@@ -21,14 +21,14 @@ public class Door1 : MonoBehaviour
 
     void Start()
     {
-         door = FindObjectOfType<KeyCollisionAll>();
-         anim = GetComponent<Animator>();
+        door = GetComponentInChildren<CollisionWithKey1>();
+        anim = GetComponent<Animator>();
     }
 
     void Update()
     {
         
-        if (!isLock)
+        if (!door.Locked())
         {
              anim.SetBool("Open", true);
              UnityEngine.Debug.Log("@@@@@@Animation Play.");

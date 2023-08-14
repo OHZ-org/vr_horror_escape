@@ -2,22 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CollisionWithKey : MonoBehaviour
+public class CollisionWithKey1 : MonoBehaviour
 {
 
     public int doorNum;
     private string keyNum;
 
+    bool locked = true;
+
     AudioSource[] arrayAudio;
-
-    Animator anim;
-
 
 
     void Start()
     {
         arrayAudio = GetComponents<AudioSource>();
-        anim.GetComponentInParent<Animator>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -36,7 +34,7 @@ public class CollisionWithKey : MonoBehaviour
             if (keyNum == "Key1")
             {
                 arrayAudio[0].Play();
-                anim.SetBool("Open", true);
+                locked = false;
             }
             else
             {
@@ -49,7 +47,8 @@ public class CollisionWithKey : MonoBehaviour
             if (keyNum == "Key2")
             {
                 arrayAudio[0].Play();
-                anim.SetBool("Open", true);
+                locked = false;
+
             }
             else
             {
@@ -62,8 +61,8 @@ public class CollisionWithKey : MonoBehaviour
         {
             if (keyNum == "Key3")
             {
-                anim.SetBool("Open", true);
                 arrayAudio[0].Play();
+                locked = false;
 
             }
             else
@@ -73,6 +72,11 @@ public class CollisionWithKey : MonoBehaviour
             }
         }
 
+    }
+
+    public bool Locked()
+    {
+        return locked;
     }
 
     void Update()
