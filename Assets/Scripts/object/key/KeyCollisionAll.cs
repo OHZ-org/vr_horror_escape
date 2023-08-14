@@ -74,15 +74,15 @@ public class KeyCollisionAll : MonoBehaviour
             keyNumber = collidingKey.name;
 
             // 3. 알림창 불러오기
-            _notice.SUB("Use Key?", collisionPosition, keyNumber);
+            _notice.SUB("Use Key?", collisionPosition, keyNumber, this.name);
         }
     }
 
     // UI에서 '열쇠 사용' 버튼을 눌렀을 때 호출할 함수
     // 열쇠 사용 버튼을 눌렀을 때 맞는 열쇠인지 체크
-    public void Check(int UINum, string keyName)
+    public void Check(string doorName, string keyName)
     {
-        if (UINum == 1)
+        if (doorName == "DoorLock1")
         {
             if (keyName == "Key1")
             {
@@ -98,7 +98,7 @@ public class KeyCollisionAll : MonoBehaviour
             }
         }
 
-        else if (UINum == 2)
+        else if (doorName == "DoorLock2")
         {
             if (keyName == "Key2")
             {
@@ -112,7 +112,7 @@ public class KeyCollisionAll : MonoBehaviour
             }
         }
 
-        else if (UINum == 3)
+        else if (doorName == "DoorLock3")
         {
             if (keyName == "Key3")
             {
