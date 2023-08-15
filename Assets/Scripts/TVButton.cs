@@ -5,34 +5,40 @@ using UnityEngine.UI;
 
 public class TVButton : MonoBehaviour
 {
-    private bool pushed = false;
+    private bool playing = false;
     AudioSource sound;
     private Button btn;
+    Door2 door2;
 
     void Start()
     {
         btn = GetComponent<Button>();
         sound = GetComponent<AudioSource>();
         btn.onClick.AddListener(OnOff);
+        door2 = GetComponentInParent<Door2>();
     }
 
     private void OnOff()
     {
-        if (!pushed)
+        if (!playing)
         {
             sound.Play();
-            pushed = true;
+            playing = true;
         }
         else
         {
             sound.Stop();
-            pushed = false;
+            playing = false;
         }
     }
 
     void Update()
     {
-
+        if (!door2.GetBool() && !playing)
+        {
+            sound.Play();
+            playing = true;
+        }
     }
 
     

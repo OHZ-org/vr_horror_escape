@@ -18,6 +18,10 @@ public class Door2 : MonoBehaviour
     {
         isLock = x;
     }
+    public bool GetBool()
+    {
+        return isLock;
+    }
 
     void Start()
     {
