@@ -177,7 +177,7 @@ public class Pb_ox : MonoBehaviour
 
         if (checkPB.name == "Pb_2_4")
         {
-            if (input == "long time no see")
+            if (input == "longtimenosee")
             {
                 Debug.Log("정답" + input);
                 OKtextChange("정답");

@@ -9,10 +9,11 @@ public class Teleport : MonoBehaviour
     public GameObject dest2;
     private bool triedtel;
     private bool triedtel2;
+    public Fadeinout fade;
     // Start is called before the first frame update
     void Start()
     {
-        
+        fade= GetComponent<Fadeinout>();
     }
 
     // Update is called once per frame
@@ -21,10 +22,12 @@ public class Teleport : MonoBehaviour
         if (Door1.opened&&!triedtel)
         {
             StartCoroutine(telpo1to2());
+            fade.Fade();
         }
         else if(Door2.opened&&!triedtel2)
         {
             StartCoroutine(telpo2to3());
+            fade.Fade(); 
         }
     }
 
