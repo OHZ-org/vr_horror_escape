@@ -5,12 +5,14 @@ using System.Collections.Specialized;
 using System.Diagnostics;
 using System.Security.Cryptography;
 using UnityEngine;
+using UnityEngine.Analytics;
 
 public class Door2 : MonoBehaviour
 {
 
     CollisionWithKey2 door;
     Animator anim;
+    public static bool opened=false;
 
     private bool isLock = true;
 
@@ -19,7 +21,7 @@ public class Door2 : MonoBehaviour
         isLock = x;
     }
     public bool GetBool()
-    {
+    {   
         return isLock;
     }
 
@@ -37,6 +39,7 @@ public class Door2 : MonoBehaviour
             anim.SetBool("Open", true);
             UnityEngine.Debug.Log("@@@@@@Animation Play.");
             UnityEngine.Debug.Log(anim.GetBool("Open"));
+            opened = true;
         }
 
     }

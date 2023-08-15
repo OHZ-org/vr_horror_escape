@@ -14,7 +14,7 @@ public class Door1 : MonoBehaviour
     Animator anim;
 
     private bool isLock = true;
-    private bool opened = false;
+    public static bool opened = false;
 
     public void SetBool(bool x)
     {
@@ -32,7 +32,7 @@ public class Door1 : MonoBehaviour
         
         if (!door.Locked() && !opened)
         {
-            opened = true;
+             opened = true;
              anim.SetBool("Open", true);
              UnityEngine.Debug.Log("@@@@@@Animation Play.");
              UnityEngine.Debug.Log(anim.GetBool("Open"));

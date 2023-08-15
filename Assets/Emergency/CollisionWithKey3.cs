@@ -9,7 +9,7 @@ public class CollisionWithKey3 : MonoBehaviour
     private string keyNum;
 
     bool locked = true;
-
+    
     AudioSource[] arrayAudio;
 
 

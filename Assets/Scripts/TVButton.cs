@@ -8,14 +8,14 @@ public class TVButton : MonoBehaviour
     private bool playing = false;
     AudioSource sound;
     private Button btn;
-    Door2 door2;
+
 
     void Start()
     {
         btn = GetComponent<Button>();
         sound = GetComponent<AudioSource>();
         btn.onClick.AddListener(OnOff);
-        door2 = GetComponentInParent<Door2>();
+        //door2 = GetComponentInParent<Door2>();
     }
 
     private void OnOff()
@@ -34,8 +34,13 @@ public class TVButton : MonoBehaviour
 
     void Update()
     {
-        if (!door2.GetBool() && !playing)
+        if (!Door2.opened&&Door1.opened && !playing)
         {
+            if (Door2.opened)
+            {
+                playing = false;
+                return;
+            }
             sound.Play();
             playing = true;
         }

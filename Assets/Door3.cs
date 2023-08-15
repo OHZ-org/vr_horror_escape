@@ -11,6 +11,7 @@ public class Door3 : MonoBehaviour
 
     CollisionWithKey3 door;
     Animator anim;
+    public static bool opened=false;
 
     private bool isLock = true;
 
@@ -33,6 +34,7 @@ public class Door3 : MonoBehaviour
             anim.SetBool("Open", true);
             UnityEngine.Debug.Log("@@@@@@Animation Play.");
             UnityEngine.Debug.Log(anim.GetBool("Open"));
+            opened = true;
         }
 
     }
