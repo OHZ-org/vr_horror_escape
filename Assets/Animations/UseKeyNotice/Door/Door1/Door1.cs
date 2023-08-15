@@ -3,16 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
 using UnityEngine;
 
 public class Door1 : MonoBehaviour
 {
 
-    KeyCollisionAll door;
+    CollisionWithKey1 door;
     Animator anim;
 
     private bool isLock = true;
+    private bool opened = false;
 
     public void SetBool(bool x)
     {
@@ -21,15 +23,16 @@ public class Door1 : MonoBehaviour
 
     void Start()
     {
-         door = FindObjectOfType<KeyCollisionAll>();
-         anim = GetComponent<Animator>();
+        door = GetComponentInChildren<CollisionWithKey1>();
+        anim = GetComponent<Animator>();
     }
 
     void Update()
     {
         
-        if (!isLock)
+        if (!door.Locked() && !opened)
         {
+            opened = true;
              anim.SetBool("Open", true);
              UnityEngine.Debug.Log("@@@@@@Animation Play.");
              UnityEngine.Debug.Log(anim.GetBool("Open"));
