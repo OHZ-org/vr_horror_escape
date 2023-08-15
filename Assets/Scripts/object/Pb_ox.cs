@@ -57,7 +57,7 @@ public class Pb_ox : MonoBehaviour
                 Debug.Log("정답" + input);
                 OKtextChange("정답");
                 count1++;
-                if (count1 == 1 && !usedkey1)
+                if (count1 == 3 && !usedkey1)
                 {
                     Debug.Log("열쇠");
                     key.SetActive(true);
@@ -78,7 +78,7 @@ public class Pb_ox : MonoBehaviour
                 Debug.Log("정답" + input);
                 OKtextChange("정답");
                 count1++;
-                if (count1 == 1 && !usedkey1)
+                if (count1 == 3 && !usedkey1)
                 {
                     Debug.Log("열쇠");
                     key.SetActive(true);
@@ -98,7 +98,7 @@ public class Pb_ox : MonoBehaviour
                 Debug.Log("정답" + input);
                 OKtextChange("정답");
                 count1++;
-                if (count1 == 1 && !usedkey1)
+                if (count1 == 3 && !usedkey1)
                 {
                     Debug.Log("열쇠");
                     key.SetActive(true);
@@ -124,7 +124,7 @@ public class Pb_ox : MonoBehaviour
                 count2++;
                 if (count2 == 4 && !usedkey2)
                 {
-                    Instantiate(key, pbbook.transform);
+                    key.SetActive(true);
                     usedkey2 = true;
                 }
             }
@@ -144,7 +144,7 @@ public class Pb_ox : MonoBehaviour
                 count2++;
                 if (count2 == 4 && !usedkey2)
                 {
-                    Instantiate(key, pbbook.transform);
+                    key.SetActive(true);
                     usedkey2 = true;
                 }
             }
@@ -164,7 +164,7 @@ public class Pb_ox : MonoBehaviour
                 count2++;
                 if (count2 == 4 && !usedkey2)
                 {
-                    Instantiate(key, pbbook.transform);
+                    key.SetActive(true);
                     usedkey2 = true;
                 }
             }
@@ -184,7 +184,7 @@ public class Pb_ox : MonoBehaviour
                 count2++;
                 if (count2 == 4 && !usedkey2)
                 {
-                    Instantiate(key, pbbook.transform);
+                    key.SetActive(true);
                     usedkey2 = true;
                 }
                 else
@@ -207,7 +207,7 @@ public class Pb_ox : MonoBehaviour
                     count3++;
                     if (count3 == 2 && !usedkey3)
                     {
-                        Instantiate(key, pbbook.transform);
+                        key.SetActive(true);
                         usedkey3 = true;
                     }
                 }
@@ -226,7 +226,7 @@ public class Pb_ox : MonoBehaviour
                     count3++;
                     if (count3 == 2 && !usedkey3)
                     {
-                        Instantiate(key, pbbook.transform);
+                        key.SetActive(true);
                         usedkey3 = true;
                     }
                 }
